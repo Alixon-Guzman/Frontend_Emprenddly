@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #b9a8c4;
+}
+
+/* ------------------ Barra Superior ------------------ */
+.barra-superior {
+    display: flex;
+    justify-content: space-between; /* Ajustado para separar el botón y el logo */
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(to right, #F0C2BE, #6C557A);
+    height: 80px;
+    box-shadow: 0 3px 5px #460000;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 55px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.barra-superior .logo {
+    height: 70px;
+}
+
+Menu {
+    height: 100%;
+    width: 220px; /* Ancho ajustado a 220px para ser consistente con tu otro componente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #f5f6f7,#b6a999 , #cadbec);
+    transition: 0.5s ease;
+    transform: translateX(-220px); /* Escondido por su propio ancho */
+    font-size: 20px;
+    z-index: 999;
+}
+
+.Menu h1 {
+    color: black;
+    font-weight: 800;
+    text-align: right;
+    padding: 10px 30px 10px 0;
+    pointer-events: none;
+}
+
+.Menu ul li {
+    list-style: none;
+}
+
+.Menu ul li a {
+    color: #6C557A;
+    font-weight: 500;
+    padding: 9px 0;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.2s ease-out;
+}
+
+.Menu ul li:hover a {
+    color: #f0c2be;
+    background-color: #6C557A;
+}
+
+/* -------------------- Botón hamburguesa -------------------- */
+.lineas-check {
+    display: none;
+}
+
+.Lineas {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 15px;
+    z-index: 1001;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #E6D6AD;
+    box-shadow: 0 0 10px #6C557A;
+}
+
+.Lineas .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #6C557A;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.Lineas .top_line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Lineas .middle_line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Lineas .bottom_line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input:checked ~ .Lineas .top_line,
+.rotate-down { /* Agregadas clases de React */
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .Lineas .bottom_line,
+.rotate-up { /* Agregadas clases de React */
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .Lineas .middle_line,
+.hidden { /* Agregadas clases de React */
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+input:checked ~ .Menu,
+.Menu.open { /* CLAVE: Agregada la clase 'open' para que funcione con React */
+    transform: translateX(0);
+    box-shadow: 0 0 15px #6C557A;
+}
+
+/* ------------------ Título y línea divisoria ------------------ */
+.Titulo {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px, #6C557A 0 0 1em, #6C557A 0 0 0.2em;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #411e02;
+    margin: 10px 0 20px 0;
+    height: 2px;
+}
+
+/* ------------------ Contenedor del botón de editar perfil ------------------ */
+.Container {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(to right, #E6D6AD, #E6D6AD);
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+/* ------------------ Botón Editar Perfil ------------------ */
+.btn-editar {
+    display: inline-block;
+    background-color: #cadbec;
+    color: black;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #f4e1b6;
+}
+
+/* ------------------ Opciones ------------------ */
+.notificaciones,
+.opcion,
+.Datos,
+.actualizaciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E6D6AD;
+    margin: 12px 15px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.opcion span,
+.Datos span,
+.notificaciones span,
+.actualizaciones span {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.opcion span img,
+.Datos span img,
+.notificaciones span img,
+.actualizaciones span img {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+/* ------------------ Botón Cerrar Sesión ------------------ */
+.btn-cerrar {
+    width: 100%;
+    margin-top: 20px;
+    background: #e6d6ad;
+    color: #000;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-cerrar:hover {
+    background: #d1c28d;
+}
+
+/* ------------------ Select Idioma ------------------ */
+select {
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #cadbec;
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+/* ------------------ Switch ON/OFF ------------------ */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #b6a999;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px; width: 24px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #cadbec;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* ------------------ Botón Hamburguesa ------------------ */
+.Lineas {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.common {
+    height: 4px;
+    width: 100%;
+    background: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.rotate-down {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.rotate-up {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+/* ------------------ Menú lateral (AJUSTADO) ------------------ */
+.Menu {
+    position: fixed;
+    top: 0;
+    left: -220px; /* Se esconde fuera de la pantalla */
+    width: 220px;
+    height: 100%;
+    background: #f3f3f3;
+    transition: left 0.3s ease; /* Permite una apertura suave */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.Menu.open {
+    left: 0; /* Se muestra en la pantalla */
+}
+
+.Menu ul {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.Menu ul li {
+    margin: 15px 0;
+}
+
+.Menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.Menu ul li a i {
+    margin-right: 10px;
+}

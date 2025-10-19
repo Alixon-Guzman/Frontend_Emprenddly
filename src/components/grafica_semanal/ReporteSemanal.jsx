@@ -240,14 +240,14 @@ function ReporteSemanal() {
         <div className="Menu">
           <h1 className="menu_titulo">Menu</h1>
           <ul>
-            <li><a href="#"><i className="fas fa-user"></i>Usuarios</a></li>
+            <li><a href="http://localhost:5173/usuarios"><i className="fas fa-user"></i>Usuarios</a></li>
             <li><a href="http://localhost:5173/registroinventario"><i className="fas fa-clipboard-list"></i>Inventario</a></li>
             <li><a href="#"><i className="fas fa-cart-plus"></i>Registro De Ventas</a></li>
-            <li><a href="#"><i className="fas fa-chart-line"></i>Reporte De Ventas</a></li>
+            <li><a href="http://localhost:5173/reporteventas"><i className="fas fa-chart-line"></i>Reporte De Ventas</a></li>
             <li><a href="http://localhost:5173/registrogastos"><i className="fas fa-wallet"></i>Registro De Gastos</a></li>
             <li><a href="http://localhost:5173/reportegastos"><i className="fas fa-file-invoice-dollar"></i>Reporte De Gastos</a></li>
             <li><a href="http://localhost:5173/menureporte"><i className="fas fa-dollar-sign"></i>Reporte De Ganancias</a></li>
-            <li><a href="#"><i className="fas fa-cogs"></i>Ajustes</a></li>
+            <li><a href="http://localhost:5173/ajustes"><i className="fas fa-cogs"></i>Ajustes</a></li>
           </ul>
         </div>
       </label>

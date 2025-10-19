@@ -15,6 +15,10 @@ import RegistroGasto from "./components/RegistrGastos/RegistroGastos.jsx";
 import Login from "./components/login/Login.jsx";
 import Registro from "./components/registro/Registro.jsx";
 
+import Usuarios from "./components/usuarios/usuariosfrom"
+import ReporteVentas from "./components/ReportVentas/reporteventas";
+import Perfil from "./components/Perfil/perfil";
+import Ajustes from "./components/Ajustes/ajustes";
 
 function App() {
   return (
@@ -58,6 +62,18 @@ function App() {
 
         {/* Registro */}
         <Route path="/registro" element={<Registro />} />
+
+        {/*Usuarios*/}
+        <Route path="/usuarios" element={<Usuarios/>} />
+
+        {/*Reporte De Ventas*/}
+        <Route path="/reporteventas" element={<ReporteVentas />} />
+
+        {/*Perfil*/}
+        <Route path="/perfil" element={<Perfil />} />
+
+        {/*Ajustes*/}
+        <Route path="/ajustes" element={<Ajustes />} />
       </Routes>
     </Router>
   );
